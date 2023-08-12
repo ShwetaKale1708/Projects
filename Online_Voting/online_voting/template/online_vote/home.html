@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif; 
+            color: white;
+            /* background-color: #121A27; */
+        }
+        body{
+            background-color: #121A27;
+        }
+        h2{
+            margin: 1%;
+            display: inline-block;
+        }
+        ul{
+            /* display: inline-block; */
+            list-style: none;
+            padding: 0%;
+            float: right;
+            margin-right: 4%;
+           
+            
+        }
+        li{
+    
+            display: inline-block;
+        }
+        li a:hover{
+            background-color: rgba(41, 248, 52, 0.773);
+        }
+        li a{
+            background-color: rgba(41, 248, 52, 0.5);
+            border-radius: 6px;
+            border:2px solid green;
+            padding: 7px 10PX;
+            margin: 1px;
+            text-decoration: none;
+          
+        }
+        .box{
+            border: 2px solid rgb(182, 211, 252);
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:-100px; /* this is half the height of your div*/  
+            margin-left:-190px; 
+            padding: 2%;
+            text-align: center;
+            border-radius: 20px;
+            background-color: rgba(207, 223, 245, 0.34);
+      
+
+        }
+        .nav{
+            border: 2px solid blue;
+            background-color: rgba(17, 107, 226,0.34);
+            text-align: center;
+            border-radius: 10px;
+            
+        }
+        .prof p{
+            padding: 10%;
+        }
+        .prof{
+            border-radius: 10px;
+            border:3px solid blue;
+            display: inline-block;
+            width: 350px;
+            margin: 1.5% 2%;
+            
+            
+        }
+      
+        .des a{
+            border:2px solid rgb(255, 255, 255);
+            border-radius: 5px;
+            padding: 1% 6%;
+            align-items: center;
+            display: block;
+            
+            
+        }
+        img{
+            height: 90px;
+            width: 90px;
+            padding: 2%;
+            /* width: 100px; */
+            border-radius: 60%;
+            
+        }
+
+        .b{
+            /* border: 2px solid red; */
+            position: absolute;
+            left: 15%;
+            right:10%;
+            top: 15%;
+            
+        }
+        .prof:hover{
+            border:3px solid rgba(41, 248, 52, 0.993)
+            ;
+            /* box-shadow: 0px 5px 35px 0px rgba(41, 248, 52, 0.993); */
+            background-color: rgba(41, 248, 52, 0.09);
+        }
+        h1{
+            margin-top: 15%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h2>ONLINE VOTING MANAGEMENT SYSTEM</h2>
+        <ul>
+            <li>
+                <a href="/viewprofile">View Profile</a>
+            </li>
+            {%if superuser%}
+            <li>
+                <a href="/addvoter">Add Voter</a>
+            </li>
+            <li>
+                <a href="/showresult">View result</a>
+            </li>
+            {%endif%}
+            <li>
+                <a href="/accounts/logout">logout</a>
+            </li>
+            
+        </ul>
+    </div>
+        {%if vote == "True" %}
+        
+            <h1  style="font-size: 2rem;">THANKS FOR GIVING YOUR VALUABLE VOTE <br>Result Will Annouce Soon...</h1>
+
+
+        {%else%}
+
+        <div class="b">
+        {% for user in alluser %} 
+
+            <fieldset class="prof ">
+                <legend style="text-align: center;"><img src="/media/{{user.Electoral}}" alt=""></legend>
+                <div class="des">
+
+                    <strong>Name:-</strong> {{user.Name}} <br> <br>
+                    <strong>Email Address:-</strong> {{user.Email_address}} <br> <br>
+                    <strong>Phone No.:-</strong> {{user.Phone_No}} <br> <br>
+                    <strong>Address:-</strong> {{user.Address}} <br> <br>
+                    <a style="text-align: center;text-decoration: none; list-style: none" href="/inc/{{user.id}}">vote</a>
+                    
+                </div>
+            </fieldset> 
+            {% endfor %}
+        </div>
+        {%endif%}
+ 
+</body>
+</html>
+<br>
+<br> <br>
+

@@ -1,0 +1,63 @@
+.font{
+    font-size: 24px;
+   
+}
+.nc{
+    /* align-items: center;
+    text-align: center; */
+    border: 3px solid red;
+}
+.carousel-item img{
+    height: 100vh;
+    width: 100vh;
+}
+.card img{
+    border-radius: 20px;
+}
+
+.card{
+    border-radius: 20px;
+}
+.hover:hover{
+    color: orangered;
+    
+}
+body{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bolder;
+}
+.container1234{
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0
+  }
+  
+  .container1234::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .container1234 img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  .container1234 span {
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  @media (max-width: 500px) {
+    .container1234 {
+        text-align: center;
+    }
+    .container1234 img {
+        margin: auto;
+        float: none;
+        display: block;
+    }
+  }

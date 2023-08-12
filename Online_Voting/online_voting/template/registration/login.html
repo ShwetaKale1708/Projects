@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Ubuntu', sans-serif;
+            color: white;
+        }
+        body{
+            background-color: #121A27;
+            color: white;
+        }
+        h2{
+            margin: 1%;
+        }
+        .nav{
+            border: 2px solid blue;
+            background-color: rgba(17, 107, 226,0.34);
+            text-align: center;
+            border-radius: 10px;
+            
+        }
+        input[type=submit]:hover{
+            background-color: rgba(41, 248, 52, 0.773);
+        }
+        input[type=submit]{
+            border: 2px solid rgba(41, 248, 52, 0.473);
+            padding: 2% 9%;
+            border-radius: 5px;
+            background-color: rgba(41, 248, 52, 0.2);
+
+        }
+       
+        ul{
+            text-decoration: none;
+            margin: 0%;
+            width: 400px;
+            padding: 0%;
+            list-style: none;
+          
+            
+        }
+        input{
+            text-align: center;
+            color: black;
+        }
+        .box{
+            box-shadow: 0px 5px 35px 0px rgb(47, 26, 236);
+            display: inline-block;
+            border: 2px solid rgb(47, 26, 236);
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-top:-100px; /* this is half the height of your div*/  
+            margin-left:-190px; /*this is half of width of your div*/
+            padding: 2%;
+            text-align: center;
+            border-radius: 20px;
+            /* background-color: rgba(47, 26, 236  , 0.04); */
+      
+
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <h2>ONLINE VOTING MANAGEMENT SYSTEM</h2>
+    </div>
+    <div class="box">
+        <form method="post">
+      
+                {{form.as_p}}
+                {%csrf_token%}
+                <input type="submit" style="color: white;" value="SUBMIT">
+        
+        
+     
+        </form>
+        <p>New User? <a style="text-decoration: none;color: rgba(41, 248, 52, 0.773);" href="/SignUp">Register Here</a></p>
+
+    </div>
+   
+</body>
+</html>

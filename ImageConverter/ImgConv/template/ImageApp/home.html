@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+{% load static %}  
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "css/base.css" %}" > 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        html{
+            font-size: 14px;
+        }
+        .idw{
+            
+            display: block;
+        }
+        h1{
+            /* border: 3px solid green; */
+            font-size: 3.3rem;
+        }
+     
+   
+    body{
+        background-color: #121A27;
+        /* background-color: rgb(17, 27, 43); */
+        /* background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/218/846/small/background-wallpaper-with-polygons-in-gradient-color.jpg'); */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:white;
+    }
+    .name{
+        /* border: 3px solid green; */
+        text-align: center;
+    }
+
+    h1{
+        /* border: 3px solid rgb(239, 236, 241); */
+        display: inline-block;
+
+
+        font-family: 'Ubuntu', sans-serif;
+        margin-top: 1%;
+
+        text-align: center;
+ 
+
+        background: -webkit-linear-gradient(120deg,#1AB7EA,#FF00FF);
+        background-clip: border-box;  /*  //extrapana */
+        -webkit-background-clip:text;
+        
+        -webkit-text-fill-color: transparent;
+    }
+    input,subbtn{
+         text-align: center;
+         font-size: 1.1rem;
+         
+    }
+    span{
+        /* border: 7px solid #121A27; */
+        /* border: 7px solid #294d86; */
+        
+        /* display: inline-block; */
+        display: block;
+        
+    }
+    .subbtn:hover{
+        color: black;
+        transition-duration: 2s;
+        background-color: rgba(5, 255, 138,1);
+    }
+    #id_choicefield{
+        text-align: center;
+         font-size: 1.1rem;
+         border: 0px solid seashell;
+         border-bottom: 2px solid rgb(5, 255, 138);
+         color: white;
+         outline: none;
+         background-color: #121A27;
+         width: 69%;
+    }
+    
+    #id_Url{
+        width: 65%;
+        padding:0px 8px;
+        border: 0px solid seashell;
+         border-bottom: 2px solid rgb(5, 255, 138);
+         color: white;
+         outline: none;
+         background-color: #121A27;
+        /* border: 3px solid rgb(252, 249, 249); */
+        /* color: white;
+        background-color: black; */
+    }
+    .subbtn{
+        display: block;
+        
+        text-align: center;
+        padding: 1% 5%;
+        border: 3px;
+        margin: 2% auto 0% auto;
+        border-radius: 4px;
+        border:2px solid rgb(5, 255, 138);
+        color: white;
+        background-color: rgba(5, 255, 138,0.2);
+
+       
+    }
+    .center{
+        font-family: 'Ubuntu', sans-serif;
+        /* font-family: 'Ubuntu'; */
+        /* font-family: 'Roboto', sans-serif; */
+        font-size: 1.2rem;
+        
+        
+        font-weight: 100;
+            box-shadow: 0px 5px 35px 0px rgb(47, 26, 236);
+            border: 3px solid rgba(13, 13, 248,0.9);
+            border-radius: 10px;
+            padding: 2%;
+            margin: auto;
+            display: inline-block;
+            /* position:absolute; */
+            /* left: 35%; */
+            /* margin: auto;     */
+        }
+        .csk{
+            /* border: 3px solid greenyellow; */
+            display: flex;
+            
+            align-items: center;
+        }
+        .mi{
+            display: block;
+            margin: auto;
+            padding: 2%;
+            border: 2px solid rgb(35, 230, 139);
+            height: 250px;
+            width: 350px;
+            border-radius: 10px;
+        }
+        .imageb{
+                /* border: 3px solid goldenrod; */
+                padding-bottom: 30px;
+
+        }
+        .imageb img{
+            /* display: block;
+            margin: auto; */
+            height: 100%;
+            width: 100%;
+        }
+    @media (min-width:414px) and (max-width: 480px){
+     html{
+         font-size: 12px;
+     }
+     h1{
+         margin-top: 4%;
+     }
+    }
+    @media (min-width:381px) and (max-width: 414px){
+     html{
+         font-size: 11px;
+     }
+    h1{
+        margin-top: 8%;
+    }
+     .mi{
+         width: 95%;
+     }
+    }
+    @media (min-width:200px) and (max-width: 381px){
+     html{
+         font-size: 10px;
+     }
+   h1{
+       margin-top: 12%;
+   }
+     .mi{
+         width: 95%;
+     }
+    }
+    </style>
+
+</head>
+<body>
+    <div class="name"><h1>MS Image Converter</h1></div>
+    {% block content %}
+    <div class="csk">
+        <form class="center" method="POST" enctype='multipart/form-data'>
+           <div class="imageb"> <div class="mi">
+            <button hidden >Select an image</button>
+               <img src="https://www.skillsage.in/Files/noimage.jpg" id="preview" alt="No preview Avilable">
+           </div> </div>
+            
+          <span> Insert Image Here &nbsp {{homeform.Image}} </span> <br><span style="text-align: center;">Or</span>  <br>
+          <span> Insert URL Here &nbsp {{optionform.Url}} </span> <br>
+        {{homeform.media}}
+        <span>Select  Features &nbsp {{optionform.choicefield}} </span> <br>
+        {%csrf_token%}
+        
+   
+        <span class="idw"> <input type="submit" class="subbtn" id="Submitbtn" value="Submit"></span>
+
+    </form> </div>
+    
+    {% endblock %}  
+
+    <script>
+        var input = document.querySelector("#id_Image");
+
+document.querySelector("button").addEventListener("click", function () {
+  input.click();
+});
+
+input.addEventListener("change", preview);
+function preview() {
+  var fileObject = this.files[0];
+  var fileReader = new FileReader();
+  fileReader.readAsDataURL(fileObject);
+  fileReader.onload = function () {
+    var result = fileReader.result;
+    var img = document.querySelector("#preview");
+    img.setAttribute("src", result);
+  };
+}
+
+    </script>
+   
+</body>
+</html>
